@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>	
+	<script type="text/javascript" src="js/main.js"></script>
+	<style type="text/css">
+		.well{
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+<div class="container " >
+
+		<!-- left pane -->
+		<div class="col-lg-3 well" style="height: 100vh;">
+			<button class="btn-block" >Manage Funding Types</button>
+		</div>
+		<!-- right pane -->
+		<div class="well col-lg-9" style="height: 100vh; " >
+				<div class="row" >
+					<div class="col-lg-12">
+						<button class="pull-right col-lg-4" >Create New Funding Types</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h4 style="text-align: left;border-bottom: 1px solid blue;line-height: 0;">
+							<span style="background: white;">Search Criteria</span>
+						</h4>
+					</div>
+				</div>	
+				
+				<br>
+
+				<div class="row">
+					<form class="form-inline" method="" action="">
+						
+							<div class="col-lg-2 ">
+							<label>institution: </label>
+							</div>
+							<!-- <select >
+								<option selected>-select-</option>
+								<option>institution1</option>
+								<option>institution2</option>
+							</select> -->
+							
+							<div class="col-lg-3 ">
+								<div class="dropdown ">
+									<button class="dropdown-toggle  " data-toggle="dropdown"> - - - - select - - - - <span class="caret"></span></button>
+
+									<ul class="dropdown-menu">
+										<li><a href="">institution1</a></li>
+										<li><a href="">institution2</a></li>
+										<li><a href="">institution3</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 pull-right">
+								<button type="submit" class="pull-right">search</button>
+							</div>
+					</form>
+				</div>
+
+				<br>
+
+				<div class="row">
+					<div class="col-lg-12" >
+						<div style="background-color: blue;">
+							<p class="lead" style="color: white;">Available Funding Types</p	>
+						</div>
+						
+					</div>
+				</div>
+
+				
+				<div class="row">
+					<form method="" action="">
+						<div class="col-lg-11">
+
+							<table class=" table table-bordered">
+
+								<thead>
+									<tr class="active">
+										<th></th>
+										<th>Funding Type</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input class="checkbox" type="checkbox" name="delete"></td>
+										<td>Research Fellowship</td>
+										<td>Research Fellowship</td>
+									</tr>
+									<tr>
+										<td><input class="checkbox" type="checkbox" name="delete"></td>
+										<td>Student Project</td>
+										<td>Student Project</td>
+									</tr>
+								</tbody>
+								
+							</table>
+						</div>
+						<div class="col-lg-1">
+							<button type="submit" class="pull-right">Delete</button>
+						</div>
+					</form>
+				</div>
+				
+		</div>	
+</div>
+
+</body>
+</html>
