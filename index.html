@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>	
 	<script type="text/javascript" src="js/main.js"></script>
@@ -10,27 +10,103 @@
 		.well{
 			background-color: white;
 		}
+		.greybg{
+			background-color: lightgray;
+		}
+		.redclose{
+			background-color: red !important;
+			opacity: 1; 
+			color: white;
+			border-radius: 50%; 
+			height: 22px; 
+			width: 22px;
+			padding:0; 
+			margin: 0; 
+			border: 1px solid white; 
+			font-size: 20px;
+		}
 	</style>
 </head>
 <body>
+
+<div class="modal fade" id="modaldiv">
+		
+	<div class="modal-dialog">
+		<div class="modal-content">
+						
+			<div class="modal-header" style="background-color: blue;">
+
+				<button  class="close redclose" data-dismiss="modal" >&times;</button>
+				
+				<label style="color:white;">Create New Funding Types</label>
+				
+			</div>
+
+			<div class="modal-body">
+				<form class="form-horizontal" id="modalform">
+					<div class="form-group">
+						<label class="control-label col-xs-4 " style="text-align: left;">Funding Type Code</label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-xs-4 " style="text-align: left;">Funding Type Name</label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-xs-4 " style="text-align: left;">Description</label>
+						<div class="col-xs-8">
+							<!-- <input type="text" class="form-control"> -->
+							<textarea class="form-control" form="modalform" style="resize: vertical;"></textarea>
+						</div>
+					</div> 
+					<div class="form-group">
+						<label class="control-label col-xs-4 " style="text-align: left;">Institution</label>
+						<div class="col-xs-8">
+							<select >
+									
+									<option>institution1</option>
+									<option>institution2</option>
+							</select>
+						</div>
+					</div> 
+			
+			
+					<div class="form-group">
+						<div class="col-xs-2 pull-right">
+						<input type="button" class="btn greybg" value="Create">
+						</div>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+			
+</div>
 <div class="container " >
 
 		<!-- left pane -->
-		<div class="col-lg-3 well" style="height: 100vh;">
-			<button class="btn-block" >Manage Funding Types</button>
+		<div class=" container col-xs-3 well nav-pills nav-stacked nav"  style="min-height: 100vh;"   >
+			<button class="btn btn-block" onclick="toggleRightPane()" >Manage Funding Types</button>
+
 		</div>
 		<!-- right pane -->
-		<div class="well col-lg-9" style="height: 100vh; " >
+		<div class=" container well col-xs-9" style="min-height: 100vh; display: none;" id="rightpane" >
 				<div class="row" >
-					<div class="col-lg-12">
-						<button class="pull-right col-lg-4" >Create New Funding Types</button>
+					<div class="col-xs-12">
+						<button class=" btn pull-right col-xs-3 greybg" data-toggle="modal" data-target="#modaldiv" >Create New Funding Types</button>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-xs-12">
 						<h4 style="text-align: left;border-bottom: 1px solid blue;line-height: 0;">
-							<span style="background: white;">Search Criteria</span>
+							
+							<label style="background: white;display: inline;">Search Criteria</label>
 						</h4>
 					</div>
 				</div>	
@@ -40,36 +116,38 @@
 				<div class="row">
 					<form class="form-inline" method="" action="">
 						
-							<div class="col-lg-2 ">
-							<label>institution: </label>
+							<div class="col-xs-2 ">
+							<label>Institution: </label>
 							</div>
-							<!-- <select >
-								<option selected>-select-</option>
-								<option>institution1</option>
-								<option>institution2</option>
-							</select> -->
 							
-							<div class="col-lg-3 ">
-								<div class="dropdown ">
-									<button class="dropdown-toggle  " data-toggle="dropdown"> - - - - select - - - - <span class="caret"></span></button>
+							
+							<div class="col-xs-3 ">
+								<select >
+									<option selected>- - -select- - -</option>
+									<option>Institution1</option>
+									<option>Institution2</option>
+								</select>
+
+								<!-- <div class="dropdown ">
+									<button class=" btn dropdown-toggle  " data-toggle="dropdown"> - - - - select - - - - <span class="caret"></span></button>
 
 									<ul class="dropdown-menu">
 										<li><a href="">institution1</a></li>
 										<li><a href="">institution2</a></li>
 										<li><a href="">institution3</a></li>
 									</ul>
-								</div>
+								</div> -->
 							</div>
 							
-							<div class="col-lg-2 pull-right">
-								<button type="submit" class="pull-right">search</button>
+							<div class="col-xs-2 pull-right">
+								<button type="button" class="btn pull-right greybg" onclick="getData()">Search</button>
 							</div>
 					</form>
 				</div>
 
 				<br>
 
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-lg-12" >
 						<div style="background-color: blue;">
 							<p class="lead" style="color: white;">Available Funding Types</p	>
@@ -77,38 +155,45 @@
 						
 					</div>
 				</div>
-
+ -->
 				
-				<div class="row">
-					<form method="" action="">
-						<div class="col-lg-11">
+				<div class="row" style="display: none;" id="data">
+					<form method="" action="" name="delete">
+						<div class="col-xs-12" >
+							<div style="background-color: blue;">
+								<label style="color:white;">Available Funding Types</label>
+							</div>
+						
+						</div>
+						<br>
+						<div class="col-xs-11">
 
-							<table class=" table table-bordered">
+							<table class=" table table-striped table-bordered">
 
 								<thead>
-									<tr class="active">
-										<th></th>
-										<th>Funding Type</th>
-										<th>Description</th>
+									<tr class="greybg">
+										<th class="col-xs-1"></th>
+										<th class="col-xs-3">Funding Type</th>
+										<th class="col-xs-6">Description</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td><input class="checkbox" type="checkbox" name="delete"></td>
-										<td>Research Fellowship</td>
-										<td>Research Fellowship</td>
+										<td class="col-xs-1"><input class="checkbox" type="checkbox" name="delete"></td>
+										<td class="col-xs-3">Research Fellowship</td>
+										<td class="col-xs-6">Research Fellowship</td>
 									</tr>
 									<tr>
-										<td><input class="checkbox" type="checkbox" name="delete"></td>
-										<td>Student Project</td>
-										<td>Student Project</td>
+										<td class="col-xs-1"><input class="checkbox" type="checkbox" name="delete"></td>
+										<td class="col-xs-3">Student Project</td>
+										<td class="col-xs-6">Student Project</td>
 									</tr>
 								</tbody>
 								
 							</table>
 						</div>
-						<div class="col-lg-1">
-							<button type="submit" class="pull-right">Delete</button>
+						<div class="col-xs-1">
+							<button type="button" class="btn btn-default pull-right">Delete</button>
 						</div>
 					</form>
 				</div>
@@ -118,3 +203,28 @@
 
 </body>
 </html>
+<script type="text/javascript">
+	function toggleRightPane(){
+		var rightpane=document.getElementById("rightpane");
+		var data=document.getElementById("data");
+		if(rightpane.style.display=="block"){
+			rightpane.style.display="none";
+			data.style.display="none";
+
+		}
+		else{
+			rightpane.style.display="block";
+		}
+		
+
+	}
+	function getData(){
+		var data=document.getElementById("data");
+		if(data.style.display=="block"){
+			data.style.display="none";
+		}
+		else{
+			data.style.display="block";
+		}
+	}
+</script>
